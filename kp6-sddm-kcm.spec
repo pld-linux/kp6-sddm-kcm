@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.4
+%define		kdeplasmaver	6.4.5
 %define		qtver		5.15.2
 %define		kpname		sddm-kcm
 
 Summary:	KDE Config Module for SDDM
 Name:		kp6-%{kpname}
-Version:	6.4.4
+Version:	6.4.5
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b19b0189993f7ebc509d3e24cc1e8aa0
+# Source0-md5:	2fb8336f972fb38cbb7c6af1c9630525
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16.0
@@ -26,6 +26,7 @@ BuildRequires:	ninja
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
+%requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
