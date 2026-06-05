@@ -35,6 +35,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDE Config Module for SDDM.
 
+%description -l pl.UTF-8
+Moduł konfiguracyjny do SDDM.
+
 %prep
 %setup -q -n %{kpname}-%{version}
 
